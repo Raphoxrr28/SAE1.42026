@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+body {
+  margin: 16px;
+  color: #111;
+  background: #fff;
+  font: 16px "Montserrat";
+}
+
+* {
+  font-family: "Montserrat";
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #aaa;
+}
+
+.identity {
+  color: inherit;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: inherit;
+}
+
+main {
+  max-width: 900px;
+  padding-top: 20px;
+}
+
+.output {
+  line-height: 1.5;
+}
+
+.output p {
+  margin: 4px 0;
+}
+
+#command-form {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+#command-form label {
+  flex: none;
+}
+
+#command {
+  min-width: 180px;
+  width: 420px;
+  border: 0;
+  border-bottom: 1px solid #777;
+  outline: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+}
+
+#command:focus {
+  border-bottom-color: #111;
+}

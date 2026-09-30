@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Version intermédiaire simplifiée du site personnel de Raphaël Heitz.">
+    <title>raphoxrr — version intermédiaire</title>
+    <link rel="stylesheet" href="mi-projet.css">
+    <script src="mi-projet.js" defer></script>
+  </head>
+  <body>
+    <div class="site">
+      <header class="topbar">
+        <a class="identity" href="#home">raphoxrr@archlinux:~</a>
+        <nav aria-label="Pages du site">
+          <a href="#about" data-page="about">about</a>
+          <a href="#projects" data-page="projects">projects</a>
+          <a href="#skills" data-page="skills">skills</a>
+          <a href="#parcours" data-page="parcours">parcours</a>
+          <a href="#contact" data-page="contact">contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="output" id="output" aria-live="polite">
+          <p><span class="prompt">[raphoxrr@archlinux ~]$</span> help</p>
+          <p>Commandes : help · ls · pwd · whoami · date · clear</p>
+          <p>Pages : about · projects · skills · parcours · contact</p>
+        </section>
+
+        <form id="command-form" autocomplete="off">
+          <label class="prompt" for="command">[raphoxrr@archlinux ~]$</label>
+          <input id="command" name="command" type="text" aria-label="Commande du terminal" autofocus>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
