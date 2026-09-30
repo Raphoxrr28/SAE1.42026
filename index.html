@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11172d">
+    <meta name="description" content="Le site personnel interactif de Raphaël Heitz, inspiré d'un terminal Linux.">
+    <title>raphoxrr — site personnel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/system.js" defer></script>
+    <script src="js/pages.js" defer></script>
+    <script src="js/commands.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body data-page="home">
+    <main class="welcome-screen" id="welcome-screen">
+      <section class="welcome-card" aria-labelledby="welcome-title">
+        <p class="welcome-kicker"><span aria-hidden="true">●</span> SITE PERSONNEL INTERACTIF</p>
+        <pre class="welcome-logo" aria-label="Logo raphoxrr">
+            
+            
+/$$$$$$$                      /$$
+| $$__  $$                    | $$
+| $$  \ $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$
+| $$$$$$$/ |____  $$ /$$__  $$| $$__  $$ /$$__  $$|  $$ /$$/ /$$__  $$ /$$__  $$
+| $$__  $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$  \ $$ \  $$$$/ | $$  \__/| $$  \__/
+| $$  \ $$ /$$__  $$| $$  | $$| $$  | $$| $$  | $$  >$$  $$ | $$      | $$
+| $$  | $$|  $$$$$$$| $$$$$$$/| $$  | $$|  $$$$$$/ /$$/\  $$| $$      | $$
+|__/  |__/ \_______/| $$____/ |__/  |__/ \______/ |__/  \__/|__/      |__/
+                    | $$
+                    | $$
+                    |__/</pre>
+        <div class="welcome-copy">
+          <p class="welcome-eyebrow">Raphaël Heitz · BUT Réseaux & Télécommunications</p>
+          <h1 id="welcome-title">Bienvenue sur mon site</h1>
+          <p>Un site personnel interactif pour découvrir mes projets, mes centres d’intérêt et me contacter.</p>
+          <p class="welcome-instructions">Une fois entré, utilise le menu ou écris <code>help</code> dans le terminal pour explorer le site.</p>
+          <button class="enter-button" id="enter-terminal" type="button">
+            <span aria-hidden="true">❯</span> Entrer dans le terminal
+          </button>
+        </div>
+        <p class="welcome-footer">© <span id="welcome-year"></span> Raphaël Heitz <span>·</span> raphoxrr.fr</p>
+      </section>
+    </main>
+
+    <div class="site-shell" id="terminal-site" hidden>
+      <header class="topbar">
+        <a class="identity" href="index.html#home" aria-label="Accueil" data-home>
+          <span class="prompt-mark">❯</span> raphoxrr@archlinux:~
+        </a>
+        <time class="clock" id="clock" aria-label="Heure actuelle">--:--:--</time>
+        <nav class="navigation" aria-label="Navigation principale">
+          <a href="about.html" data-page="about">about</a>
+          <a href="projects.html" data-page="projects">projects</a>
+          <a href="skills.html" data-page="skills">skills</a>
+          <a href="parcours.html" data-page="parcours">parcours</a>
+          <a href="creativity.html" data-page="creativity">creativity</a>
+          <a href="viginum.html" data-page="viginum">viginum</a>
+          <a href="contact.html" data-page="contact">contact</a>
+        </nav>
+      </header>
+
+      <main class="terminal" id="home">
+        <pre class="ascii-logo" aria-label="raphoxrr">
+/$$$$$$$                      /$$
+| $$__  $$                    | $$
+| $$  \ $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$
+| $$$$$$$/ |____  $$ /$$__  $$| $$__  $$ /$$__  $$|  $$ /$$/ /$$__  $$ /$$__  $$
+| $$__  $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$  \ $$ \  $$$$/ | $$  \__/| $$  \__/
+| $$  \ $$ /$$__  $$| $$  | $$| $$  | $$| $$  | $$  >$$  $$ | $$      | $$
+| $$  | $$|  $$$$$$$| $$$$$$$/| $$  | $$|  $$$$$$/ /$$/\  $$| $$      | $$
+|__/  |__/ \_______/| $$____/ |__/  |__/ \______/ |__/  \__/|__/      |__/
+                    | $$
+                    | $$
+                    |__/</pre>
+
+        <section class="system-info" aria-label="Informations système">
+          <p><span class="label">Platform:</span><span>Linux</span></p>
+          <p><span class="label">Browser:</span><span id="browser">Chromium</span></p>
+          <p><span class="label">Language:</span><span id="language">fr-FR</span></p>
+          <p><span class="label">Online:</span><span class="value-accent">Oui</span></p>
+          <p><span class="label">Screen:</span><span id="screen-size">—</span></p>
+          <p><span class="label">CPU threads:</span><span id="cpu-threads">—</span></p>
+          <p><span class="label">Memory:</span><span>environ 16 Go</span></p>
+        </section>
+
+        <section class="terminal-output" id="terminal-output" aria-live="polite" aria-label="Sortie du terminal">
+          <p class="command-line"><span class="prompt">[raphoxrr@archlinux ~]$</span> help</p>
+          <p>Commandes : ls · cd · pwd · cat · echo · whoami · hostname · date · fetch · neofetch · clear</p>
+          <p>Pages : about · projects · skills · parcours · viginum · contact</p>
+        </section>
+
+        <form class="command-form" id="command-form" autocomplete="off">
+          <label class="prompt" for="command-input">[raphoxrr@archlinux ~]$</label>
+          <input id="command-input" name="command" type="text" spellcheck="false" aria-label="Commande shell" placeholder="écris une commande…" autofocus>
+          <span class="input-hint">Tape une commande puis appuie sur Entrée</span>
+        </form>
+      </main>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Raphaël Heitz</span>
+        <span>BUT RT · raphoxrr.fr</span>
+      </footer>
+    </div>
+  </body>
+</html>

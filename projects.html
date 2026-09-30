@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#11172d">
+    <meta name="description" content="Les projets personnels de Raphaël Heitz.">
+    <title>Projets — raphoxrr</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/data.js" defer></script>
+    <script src="js/system.js" defer></script>
+    <script src="js/pages.js" defer></script>
+    <script src="js/commands.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body data-page="projects">
+    <div class="site-shell" id="terminal-site">
+      <header class="topbar">
+        <a class="identity" href="index.html#home" aria-label="Accueil"><span class="prompt-mark">❯</span> raphoxrr@archlinux:~</a>
+        <time class="clock" id="clock" aria-label="Heure actuelle">--:--:--</time>
+        <nav class="navigation" aria-label="Navigation principale">
+          <a href="about.html" data-page="about">about</a><a href="projects.html" data-page="projects">projects</a><a href="skills.html" data-page="skills">skills</a><a href="creativity.html" data-page="creativity">creativity</a><a href="viginum.html" data-page="viginum">viginum</a><a href="contact.html" data-page="contact">contact</a><a href="parcours.html" data-page="parcours">parcours</a>
+        </nav>
+      </header>
+      <main class="terminal">
+        <pre class="ascii-logo" aria-label="raphoxrr">/$$$$$$$                      /$$
+| $$__  $$                    | $$
+| $$  \ $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$   /$$$$$$
+| $$$$$$$/ |____  $$ /$$__  $$| $$__  $$ /$$__  $$|  $$ /$$/ /$$__  $$ /$$__  $$
+| $$__  $$  /$$$$$$$| $$  \ $$| $$  \ $$| $$  \ $$ \  $$$$/ | $$  \__/| $$  \__/
+| $$  \ $$ /$$__  $$| $$  | $$| $$  | $$| $$  | $$  >$$  $$ | $$      | $$
+| $$  | $$|  $$$$$$$| $$$$$$$/| $$  | $$|  $$$$$$/ /$$/\  $$| $$      | $$
+|__/  |__/ \_______/| $$____/ |__/  |__/ \______/ |__/  \__/|__/      |__/
+                    | $$
+                    | $$
+                    |__/</pre>
+        <section class="system-info" aria-label="Informations système">
+          <p><span class="label">Platform:</span><span>Linux</span></p><p><span class="label">Browser:</span><span id="browser">Chromium</span></p><p><span class="label">Language:</span><span id="language">fr-FR</span></p><p><span class="label">Online:</span><span class="value-accent">Oui</span></p><p><span class="label">Screen:</span><span id="screen-size">—</span></p><p><span class="label">CPU threads:</span><span id="cpu-threads">—</span></p><p><span class="label">Memory:</span><span>environ 16 Go</span></p>
+        </section>
+        <section class="terminal-output" id="terminal-output" aria-live="polite" aria-label="Sortie du terminal"></section>
+        <form class="command-form" id="command-form" autocomplete="off"><label class="prompt" for="command-input">[raphoxrr@archlinux ~]$</label><input id="command-input" name="command" type="text" spellcheck="false" aria-label="Commande shell" placeholder="écris une commande…"><span class="input-hint">Tape une commande puis appuie sur Entrée</span></form>
+      </main>
+      <footer class="footer"><span>© <span id="year"></span> Raphaël Heitz</span><span>BUT RT · raphoxrr.fr</span></footer>
+    </div>
+  </body>
+</html>
