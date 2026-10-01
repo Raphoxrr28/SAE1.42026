@@ -8,7 +8,6 @@ Site personnel statique de Raphaël Heitz, réalisé en HTML, CSS et JavaScript.
 - `pages/home.html` : accueil et présentation.
 - `pages/projects.html` : projets.
 - `pages/skills.html` : emplacement pour une future vidéo horizontale, compétences personnelles, grandes cases de captures d’écran et clips de gameplay.
-- `pages/parcours.html` : parcours de formation.
 - `pages/creativity.html` : références et journal de bord de la création du site.
 - `pages/viginum.html` : présentation de VIGINUM.
 - `pages/contact.html` : liens de contact.
@@ -42,7 +41,7 @@ Les commandes précédentes et suivantes peuvent être retrouvées avec les flè
 ├── index.html
 ├── pages/
 │   ├── index.html, home.html, projects.html, skills.html
-│   ├── parcours.html, creativity.html, viginum.html, contact.html, about.html
+│   ├── creativity.html, viginum.html, contact.html, about.html
 ├── images/              # Images du site et illustrations du journal créatif
 │   └── …
 ├── style.css            # Styles communs et imports des styles de page

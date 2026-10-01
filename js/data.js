@@ -8,10 +8,6 @@ window.SiteData = {
     projects: ["Mes projets"],
     skills: ["Compétences personnelles"],
     creativity: ["Le processus créatif"],
-    parcours: [
-      "Parcours",
-      "BUT Réseaux & Télécommunications — formation en réseaux, systèmes et télécommunications."
-    ],
     viginum: ["VIGINUM — comprendre le service"],
     contact: ["Me contacter"]
   },
@@ -38,5 +34,5 @@ window.SiteData = {
       action: null
     }
   ],
-  files: ["home.txt", "projects.txt", "skills.txt", "creativity.txt", "parcours.txt", "viginum.txt", "contact.txt"]
+  files: ["home.txt", "projects.txt", "skills.txt", "creativity.txt", "viginum.txt", "contact.txt"]
 };

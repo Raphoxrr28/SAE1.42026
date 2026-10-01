@@ -16,7 +16,7 @@ window.SiteCommands = {
 
     if (name === "help") {
       addLine("Commandes : ls · cd · pwd · cat · echo · whoami · hostname · date · fetch · neofetch · clear");
-      addLine("Pages : home · projects · skills · creativity · parcours · viginum · contact");
+      addLine("Pages : home · projects · skills · creativity · viginum · contact");
     } else if (name === "ls") {
       addLine(files.join("   "));
     } else if (name === "pwd") {

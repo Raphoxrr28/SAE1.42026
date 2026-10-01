@@ -504,23 +504,23 @@ function createSkillsPage() {
   videoKicker.textContent = "COMPÉTENCES";
   videoHeading.append(videoKicker);
 
-  const videoPlaceholder = document.createElement("div");
-  videoPlaceholder.className = "skills-video-placeholder";
-  videoPlaceholder.setAttribute("aria-label", "Emplacement réservé pour une future vidéo horizontale");
-  const placeholderIcon = document.createElement("span");
-  placeholderIcon.className = "skills-video-icon";
-  placeholderIcon.setAttribute("aria-hidden", "true");
-  placeholderIcon.textContent = "▶";
-  const placeholderText = document.createElement("p");
-  placeholderText.textContent = "Vidéo horizontale à venir";
-  videoPlaceholder.append(placeholderIcon, placeholderText);
+  const video = document.createElement("video");
+  video.className = "skills-video-player";
+  video.controls = true;
+  video.playsInline = true;
+  video.preload = "metadata";
+  video.setAttribute("aria-label", "Vidéo de compétences");
+  const videoSource = document.createElement("source");
+  videoSource.src = "../images/document_5906585659937659980.mp4";
+  videoSource.type = "video/mp4";
+  video.append(videoSource);
 
   const scrollLink = document.createElement("a");
   scrollLink.className = "skills-scroll-link";
   scrollLink.href = "#skills-games";
   scrollLink.setAttribute("aria-label", "Découvrir mes compétences personnelles liées aux jeux vidéo");
   scrollLink.textContent = "↓";
-  videoSection.append(videoHeading, videoPlaceholder, scrollLink);
+  videoSection.append(videoHeading, video, scrollLink);
 
   const gamesSection = document.createElement("section");
   gamesSection.className = "skills-games-section";
@@ -598,17 +598,29 @@ function createSkillsPage() {
   gamesGallery.setAttribute("aria-label", "Captures d’écran des jeux vidéo");
   const screenshots = document.createElement("div");
   screenshots.className = "skills-screenshot-grid";
-  ["01", "02", "03", "04", "05", "06"].forEach((number) => {
+  [
+    { number: "01", image: "../images/lol.png", alt: "Capture d’écran de League of Legends" },
+    { number: "02", image: "../images/ow.png", alt: "Capture d’écran d’Overwatch" }
+  ].forEach(({ number, image, alt }) => {
     const card = document.createElement("article");
     card.className = "skills-game-card";
-    const placeholder = document.createElement("div");
-    placeholder.className = "skills-game-screenshot-placeholder";
-    placeholder.setAttribute("role", "img");
-    placeholder.setAttribute("aria-label", `Emplacement pour une capture du jeu ${number}`);
-    const label = document.createElement("span");
-    label.textContent = "Capture à ajouter";
-    placeholder.append(label);
-    card.append(placeholder);
+    if (image) {
+      const screenshot = document.createElement("img");
+      screenshot.className = "skills-game-screenshot";
+      screenshot.src = image;
+      screenshot.alt = alt;
+      screenshot.loading = "lazy";
+      card.append(screenshot);
+    } else {
+      const placeholder = document.createElement("div");
+      placeholder.className = "skills-game-screenshot-placeholder";
+      placeholder.setAttribute("role", "img");
+      placeholder.setAttribute("aria-label", `Emplacement pour une capture du jeu ${number}`);
+      const label = document.createElement("span");
+      label.textContent = "Capture à ajouter";
+      placeholder.append(label);
+      card.append(placeholder);
+    }
     screenshots.append(card);
   });
   gamesGallery.append(screenshots);
@@ -618,17 +630,46 @@ function createSkillsPage() {
   clipsSection.setAttribute("aria-label", "Clips de gameplay");
   const clipsGrid = document.createElement("div");
   clipsGrid.className = "skills-clips-grid";
-  ["01", "02", "03", "04", "05", "06"].forEach((number) => {
+  [
+    { number: "01", videoId: "TGJcoJb65Dk", title: "4 jett ult CLIP" },
+    { number: "02", videoId: "4Ffq9sWEKYc", title: "Clip de gameplay" }
+  ].forEach(({ number, videoId, title }) => {
     const card = document.createElement("article");
     card.className = "skills-clip-card";
-    const placeholder = document.createElement("div");
-    placeholder.className = "skills-game-clip-placeholder";
-    placeholder.setAttribute("role", "img");
-    placeholder.setAttribute("aria-label", `Emplacement pour un clip de gameplay ${number}`);
-    const label = document.createElement("span");
-    label.textContent = "Clip de gameplay à ajouter";
-    placeholder.append(label);
-    card.append(placeholder);
+    if (videoId) {
+      if (window.location.protocol === "file:") {
+        const message = document.createElement("p");
+        message.className = "skills-game-clip-notice";
+        message.textContent = "Pour lire le clip intégré, ouvre le site avec Live Server.";
+        card.append(message);
+      } else {
+        const frame = document.createElement("iframe");
+        frame.className = "skills-game-clip";
+        frame.src = `https://www.youtube.com/embed/${videoId}`;
+        frame.title = title;
+        frame.loading = "lazy";
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        card.append(frame);
+      }
+      const videoLink = document.createElement("a");
+      videoLink.className = "skills-game-clip-link";
+      videoLink.href = `https://youtu.be/${videoId}`;
+      videoLink.target = "_blank";
+      videoLink.rel = "noopener noreferrer";
+      videoLink.textContent = "Regarder sur YouTube";
+      card.append(videoLink);
+    } else {
+      const placeholder = document.createElement("div");
+      placeholder.className = "skills-game-clip-placeholder";
+      placeholder.setAttribute("role", "img");
+      placeholder.setAttribute("aria-label", `Emplacement pour un clip de gameplay ${number}`);
+      const label = document.createElement("span");
+      label.textContent = "Clip de gameplay à ajouter";
+      placeholder.append(label);
+      card.append(placeholder);
+    }
     clipsGrid.append(card);
   });
   clipsSection.append(clipsGrid);
