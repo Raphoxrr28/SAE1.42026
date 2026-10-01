@@ -1,0 +1,173 @@
+.viginum-mode .ascii-logo,
+.viginum-mode .system-info,
+.viginum-mode .command-form {
+  display: none;
+}
+
+.viginum-mode .terminal {
+  display: block;
+  padding: 2.5rem 1.5rem 3rem;
+}
+
+.viginum-mode .terminal-output {
+  width: min(100%, 1080px);
+  max-width: none;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.terminal-output--viginum > .viginum-article {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.viginum-intro,
+.viginum-section,
+.viginum-note,
+.viginum-sources {
+  padding: clamp(1.2rem, 2.5vw, 2rem);
+  border: 1px solid rgba(185, 138, 255, 0.24);
+  border-radius: 9px;
+  background: rgba(17, 23, 45, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.viginum-kicker,
+.viginum-eyebrow {
+  margin: 0 0 0.65rem !important;
+  color: var(--pink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.viginum-intro h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 3.4vw, 2.55rem);
+  line-height: 1.2;
+}
+
+.viginum-lead {
+  max-width: 850px;
+  margin: 1rem 0 0 !important;
+  color: #d7dcef;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.viginum-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.viginum-fact {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 1.2rem;
+  border-left: 2px solid var(--cyan);
+  background: rgba(16, 22, 45, 0.82);
+}
+
+.viginum-fact strong {
+  color: var(--cyan);
+  font-size: 1.1rem;
+}
+
+.viginum-fact span {
+  color: #c5cbe2;
+  font-size: 0.75rem;
+}
+
+.viginum-section h2,
+.viginum-note h2,
+.viginum-sources h2 {
+  margin: 0 0 0.85rem;
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+.viginum-section > p:not(.viginum-eyebrow),
+.viginum-note > p {
+  margin: 0.6rem 0 0 !important;
+  color: #c5cbe2;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.viginum-section ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0;
+  padding-left: 1.25rem;
+  color: #c5cbe2;
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.viginum-section li::marker,
+.viginum-sources li::marker {
+  color: var(--pink);
+}
+
+.viginum-mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.viginum-mission-card {
+  padding: 1.1rem;
+  border: 1px solid rgba(85, 218, 250, 0.19);
+  border-radius: 7px;
+  background: rgba(13, 19, 40, 0.62);
+}
+
+.viginum-mission-number {
+  color: var(--pink);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.viginum-mission-card h3 {
+  margin: 0.4rem 0;
+  color: var(--cyan);
+  font-size: 0.96rem;
+}
+
+.viginum-mission-card p {
+  margin: 0;
+  color: #c5cbe2;
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+.viginum-note {
+  border-color: rgba(72, 245, 140, 0.3);
+  background: rgba(17, 30, 42, 0.9);
+}
+
+.viginum-sources ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.78rem;
+}
+
+.viginum-sources a {
+  color: var(--cyan);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.viginum-sources a:hover,
+.viginum-sources a:focus-visible {
+  color: var(--pink);
+}

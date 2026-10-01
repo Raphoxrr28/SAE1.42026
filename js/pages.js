@@ -290,13 +290,13 @@ function createCreativityPage() {
       category: "PROJET · GITHUB",
       title: "Serpantinum",
       href: "https://github.com/ilyamiro/serpantinum",
-      description: "Un projet GitHub que j’ai ajouté parmi les références qui ont nourri ma démarche créative."
+      description: "Serpantinum est mon gestionnaire de fenêtres au quotidien sur mon ordinateur. C’est en l’utilisant que mes premières idées pour l’ambiance et l’interface de ce site ont commencé à émerger."
     },
     {
       category: "REMERCIEMENTS · LINKEDIN",
       title: "Michaël Vlesik-Schmitt — BUT MMI",
       href: "https://fr.linkedin.com/in/micha%C3%ABl-vlesik-schmitt?trk=public_post_feed-actor-image",
-      description: "Le profil LinkedIn de Michaël Vlesik-Schmitt, ajouté dans mes références et remerciements."
+      description: "Michaël est un ami que je me suis fait en MMI en 2024. Il m’a énormément aidé à construire les pages JavaScript de ce site, et je tiens à le remercier pour son aide."
     },
     {
       category: "VIDÉO · YOUTUBE",
@@ -341,14 +341,24 @@ function createCreativityPage() {
       card.append(sourceCategory, heading);
       const frame = document.createElement("iframe");
       frame.className = "creativity-video";
-      frame.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
+      const embedUrl = new URL(`https://www.youtube.com/embed/${videoId}`);
+      embedUrl.searchParams.set("origin", window.location.origin);
+      embedUrl.searchParams.set("widget_referrer", window.location.href);
+      frame.src = embedUrl.toString();
       frame.title = sourceTitle;
       frame.loading = "lazy";
-      frame.referrerPolicy = "strict-origin-when-cross-origin";
+      frame.referrerPolicy = "origin";
       frame.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       frame.allowFullscreen = true;
-      card.append(frame);
+      const videoLink = document.createElement("a");
+      videoLink.className = "creativity-source-action";
+      videoLink.href = href;
+      videoLink.target = "_blank";
+      videoLink.rel = "noopener noreferrer";
+      videoLink.textContent = "Regarder sur YouTube";
+      videoLink.setAttribute("aria-label", `Regarder ${sourceTitle} sur YouTube`);
+      card.append(frame, videoLink);
     } else {
       front.append(sourceCategory, heading);
       const back = document.createElement("div");
@@ -389,7 +399,7 @@ function createCreativityPage() {
         "J’ai d’abord imaginé le site sous forme de maquette sur Canva. Cette première piste m’a permis de poser l’ambiance visuelle et l’organisation générale avant de commencer à coder.",
       images: [
         {
-          src: "2.png",
+          src: "../images/2.png",
           alt: "Première maquette du site personnel réalisée sur Canva",
           caption: "Maquette Canva"
         }
@@ -403,12 +413,12 @@ function createCreativityPage() {
       note: "J’ai voulu poursuivre le projet en TypeScript, mais cela dépassait mes compétences à ce moment-là.",
       images: [
         {
-          src: "fichier copié.png",
+          src: "../images/fichier copié.png",
           alt: "Capture de la première version codée du site, avec son terminal et sa navigation",
           caption: "Première version codée"
         },
         {
-          src: "3.png",
+          src: "../images/3.png",
           alt: "Maquette du rendu que je voulais obtenir pour le site",
           caption: "Rendu que je visais"
         }
@@ -421,7 +431,7 @@ function createCreativityPage() {
         "Le principal problème de cette page était que son fond d’écran n’était pas libre de droits.",
       images: [
         {
-          src: "image.png",
+          src: "../images/image.png",
           alt: "Capture d’écran de l’étape intermédiaire du site, intitulée mi-projet",
           caption: "Mi-projet"
         }
@@ -477,6 +487,157 @@ function createCreativityPage() {
   return article;
 }
 
+function createSkillsPage() {
+  const article = document.createElement("article");
+  article.className = "skills-article";
+  article.setAttribute("aria-label", "Compétences personnelles et jeux vidéo");
+
+  const videoSection = document.createElement("section");
+  videoSection.className = "skills-video-section";
+  videoSection.setAttribute("aria-labelledby", "skills-video-title");
+
+  const videoHeading = document.createElement("div");
+  videoHeading.className = "skills-section-heading";
+  const videoKicker = document.createElement("p");
+  videoKicker.className = "skills-kicker";
+  videoKicker.id = "skills-video-title";
+  videoKicker.textContent = "COMPÉTENCES";
+  videoHeading.append(videoKicker);
+
+  const videoPlaceholder = document.createElement("div");
+  videoPlaceholder.className = "skills-video-placeholder";
+  videoPlaceholder.setAttribute("aria-label", "Emplacement réservé pour une future vidéo horizontale");
+  const placeholderIcon = document.createElement("span");
+  placeholderIcon.className = "skills-video-icon";
+  placeholderIcon.setAttribute("aria-hidden", "true");
+  placeholderIcon.textContent = "▶";
+  const placeholderText = document.createElement("p");
+  placeholderText.textContent = "Vidéo horizontale à venir";
+  videoPlaceholder.append(placeholderIcon, placeholderText);
+
+  const scrollLink = document.createElement("a");
+  scrollLink.className = "skills-scroll-link";
+  scrollLink.href = "#skills-games";
+  scrollLink.setAttribute("aria-label", "Découvrir mes compétences personnelles liées aux jeux vidéo");
+  scrollLink.textContent = "↓";
+  videoSection.append(videoHeading, videoPlaceholder, scrollLink);
+
+  const gamesSection = document.createElement("section");
+  gamesSection.className = "skills-games-section";
+  gamesSection.id = "skills-games";
+  gamesSection.setAttribute("aria-labelledby", "skills-games-title");
+
+  const gamesTitle = document.createElement("h2");
+  gamesTitle.id = "skills-games-title";
+  gamesTitle.textContent = "Ce que les jeux vidéo m’apportent";
+  const gamesIntro = document.createElement("p");
+  gamesIntro.className = "skills-games-intro";
+  gamesIntro.textContent =
+    "Les jeux vidéo sont pour moi plus qu’un loisir : ils m’aident à développer des qualités que je retrouve aussi dans mes projets et dans le travail en équipe.";
+
+  const skillsGrid = document.createElement("div");
+  skillsGrid.className = "skills-personal-grid";
+  [
+    {
+      title: "Réflexion stratégique",
+      description: "Analyser la partie et adapter mes décisions au contexte.",
+      examples: [
+        ["League of Legends", "En midlane avec Yone, Akali ou Ahri, je regarde la position du jungler adverse et l’état de ma vague avant de tenter un trade ou de partir aider une autre lane."],
+        ["Overwatch", "Avec Mei, je peux isoler un adversaire avec son mur au moment où mon équipe engage. Avec Widowmaker ou Hanzo, je cherche une ligne de vue utile sans rester exposé au même endroit."],
+        ["Valorant", "Avec Jett, je peux utiliser ma mobilité pour prendre une position puis me replier. Avec Raze, je garde mes satchels pour entrer sur le site ou déloger un adversaire."],
+        ["Fortnite", "Mon expérience compétitive m’a appris à choisir mes rotations, gérer mes ressources et prendre des décisions rapidement en fin de partie. J’ai atteint les demi-finales des FNCS du Chapitre 2, saison 5."]
+      ]
+    },
+    {
+      title: "Esprit d’équipe",
+      description: "Communiquer et coordonner mes actions pour atteindre un objectif commun.",
+      examples: [
+        ["League of Legends", "En midlane, j’annonce les disparitions de mon adversaire et je préviens mon jungler avant de préparer un contrôle avec le charme d’Ahri ou l’engagement de Yone."],
+        ["Overwatch", "Avec Mei, je peux couper la retraite adverse avec mon mur quand l’équipe attaque. Avec Widowmaker ou Hanzo, je communique les cibles repérées pour aider mes alliés à engager."],
+        ["Valorant", "Avec Jett ou Raze, je préviens l’équipe avant d’entrer sur le site et je pars au moment où mes coéquipiers lancent leurs utilitaires, afin qu’ils puissent suivre et échanger."],
+        ["Fortnite", "En compétition, communiquer les adversaires repérés, les ressources disponibles et la rotation prévue aide toute l’équipe à avancer ensemble et à éviter les décisions isolées."]
+      ]
+    },
+    {
+      title: "Persévérance",
+      description: "Apprendre de mes erreurs, ajuster mon jeu et rester concentré malgré les difficultés.",
+      examples: [
+        ["League of Legends", "Si ma lane se passe mal avec Yone, Akali ou Ahri, j’évite de répéter les trades perdants : je sécurise les sbires, demande de l’aide et attends une occasion plus sûre pour revenir."],
+        ["Overwatch", "Si je me fais souvent repérer avec Widowmaker ou Hanzo, je change d’angle après un tir. Si une Mei adverse bloque mon équipe, je garde mes distances et cherche une autre entrée."],
+        ["Valorant", "Si mes entrées avec Jett ou Raze échouent, je change de timing ou de trajectoire et je me coordonne davantage avec les utilitaires de l’équipe au lieu de recommencer seul."],
+        ["Fortnite", "Après plusieurs années de jeu compétitif, j’ai appris à analyser mes erreurs, m’entraîner et m’adapter sous pression. Atteindre les demi-finales des FNCS du Chapitre 2, saison 5 a marqué ce parcours."]
+      ]
+    }
+  ].forEach(({ title, description, examples }) => {
+    const card = document.createElement("article");
+    card.className = "skills-personal-card";
+    const heading = document.createElement("h3");
+    heading.textContent = title;
+    const text = document.createElement("p");
+    text.textContent = description;
+
+    const gameExamples = document.createElement("div");
+    gameExamples.className = "skills-game-examples";
+    examples.forEach(([game, example]) => {
+      const details = document.createElement("details");
+      details.className = "skills-game-example";
+      const summary = document.createElement("summary");
+      summary.textContent = game;
+      const explanation = document.createElement("p");
+      explanation.textContent = example;
+      details.append(summary, explanation);
+      gameExamples.append(details);
+    });
+
+    card.append(heading, text, gameExamples);
+    skillsGrid.append(card);
+  });
+
+  const gamesGallery = document.createElement("section");
+  gamesGallery.className = "skills-games-gallery";
+  gamesGallery.setAttribute("aria-label", "Captures d’écran des jeux vidéo");
+  const screenshots = document.createElement("div");
+  screenshots.className = "skills-screenshot-grid";
+  ["01", "02", "03", "04", "05", "06"].forEach((number) => {
+    const card = document.createElement("article");
+    card.className = "skills-game-card";
+    const placeholder = document.createElement("div");
+    placeholder.className = "skills-game-screenshot-placeholder";
+    placeholder.setAttribute("role", "img");
+    placeholder.setAttribute("aria-label", `Emplacement pour une capture du jeu ${number}`);
+    const label = document.createElement("span");
+    label.textContent = "Capture à ajouter";
+    placeholder.append(label);
+    card.append(placeholder);
+    screenshots.append(card);
+  });
+  gamesGallery.append(screenshots);
+
+  const clipsSection = document.createElement("section");
+  clipsSection.className = "skills-clips-section";
+  clipsSection.setAttribute("aria-label", "Clips de gameplay");
+  const clipsGrid = document.createElement("div");
+  clipsGrid.className = "skills-clips-grid";
+  ["01", "02", "03", "04", "05", "06"].forEach((number) => {
+    const card = document.createElement("article");
+    card.className = "skills-clip-card";
+    const placeholder = document.createElement("div");
+    placeholder.className = "skills-game-clip-placeholder";
+    placeholder.setAttribute("role", "img");
+    placeholder.setAttribute("aria-label", `Emplacement pour un clip de gameplay ${number}`);
+    const label = document.createElement("span");
+    label.textContent = "Clip de gameplay à ajouter";
+    placeholder.append(label);
+    card.append(placeholder);
+    clipsGrid.append(card);
+  });
+  clipsSection.append(clipsGrid);
+
+  gamesSection.append(gamesTitle, gamesIntro, skillsGrid, gamesGallery, clipsSection);
+  article.append(videoSection, gamesSection);
+  return article;
+}
+
 window.SitePages = {
   render(output, name) {
     const content = window.SiteData.pages[name];
@@ -486,10 +647,13 @@ window.SitePages = {
     output.classList.toggle("terminal-output--projects", name === "projects");
     output.classList.toggle("terminal-output--viginum", name === "viginum");
     output.classList.toggle("terminal-output--creativity", name === "creativity");
+    output.classList.toggle("terminal-output--skills", name === "skills");
     if (name === "viginum") {
       output.append(createViginumArticle());
     } else if (name === "creativity") {
       output.append(createCreativityPage());
+    } else if (name === "skills") {
+      output.append(createSkillsPage());
     } else {
     content.forEach((line, index) => {
       const paragraph = document.createElement("p");

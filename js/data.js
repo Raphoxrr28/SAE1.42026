@@ -6,7 +6,7 @@ window.SiteData = {
       "Curieux de Linux, des réseaux et de la cybersécurité, j'aime apprendre en construisant."
     ],
     projects: ["Mes projets"],
-    skills: [],
+    skills: ["Compétences personnelles"],
     creativity: ["Le processus créatif"],
     parcours: [
       "Parcours",

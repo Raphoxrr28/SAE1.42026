@@ -57,6 +57,7 @@ Ces fonctions construisent les éléments HTML des pages à l'aide de l'API DOM.
 | `createViginumSection(...)` | Crée une section éditoriale avec titre, paragraphes et liste à puces facultative. |
 | `createViginumArticle()` | Assemble l'article VIGINUM : introduction, faits, missions, méthode, cadre et sources. |
 | `createCreativityPage()` | Construit les références, les vidéos intégrées et le journal de bord illustré. Les cartes de référence affichent leur explication au verso au survol ou au focus clavier. |
+| `createSkillsPage()` | Construit la page Compétences : emplacement horizontal pour une future vidéo, flèche vers la section Jeux vidéo, cartes de compétences personnelles, six cases de captures et six emplacements de clips de gameplay. |
 | `SitePages.render(output, name)` | Vide la sortie et affiche la page demandée. Renvoie `false` si le nom de page est inconnu, sinon `true`. |
 
 Les contenus textuels sont ajoutés avec `textContent`. Les listes de données (paragraphes, missions, images et projets) sont parcourues pour créer les éléments correspondants.

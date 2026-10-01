@@ -1,0 +1,103 @@
+.contact-mode .ascii-logo,
+.contact-mode .system-info,
+.contact-mode .command-form {
+  display: none;
+}
+
+.contact-mode .terminal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.contact-mode .terminal-output {
+  width: min(100%, 1200px);
+  max-width: none;
+  margin: 0;
+}
+
+.contact-mode .terminal-output > .page-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.contact-mode .contact-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0;
+}
+
+.contact-mode .contact-card {
+  min-height: 100px;
+  padding: 1.1rem;
+  background: rgba(17, 23, 45, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.contact-card {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(185, 138, 255, 0.34);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #11172d;
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(85, 218, 250, 0.72);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.contact-card-icon {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  flex: none;
+  place-items: center;
+  border: 1px solid rgba(72, 245, 140, 0.3);
+  border-radius: 7px;
+  color: var(--pink);
+  background: rgba(72, 245, 140, 0.08);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.contact-card-details {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-card-label {
+  color: var(--pink);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.contact-card-username {
+  overflow-wrap: anywhere;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.contact-card-arrow {
+  margin-left: auto;
+  color: var(--cyan);
+}

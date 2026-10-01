@@ -1,0 +1,255 @@
+.skills-mode .ascii-logo,
+.skills-mode .system-info,
+.skills-mode .command-form {
+  display: none;
+}
+
+.skills-mode .terminal {
+  display: block;
+  padding: 0;
+}
+
+.skills-mode .terminal-output {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.terminal-output--skills > .skills-article {
+  display: grid;
+}
+
+.skills-video-section {
+  display: grid;
+  min-height: calc(100svh - 70px);
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  padding: 2rem 1rem 1.25rem;
+}
+
+.skills-section-heading {
+  text-align: center;
+}
+
+.skills-kicker {
+  margin: 0 0 0.6rem !important;
+  color: var(--pink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.skills-section-heading h1,
+.skills-games-section h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  line-height: 1.35;
+}
+
+.skills-video-placeholder {
+  display: flex;
+  width: min(80vw, 960px);
+  aspect-ratio: 16 / 9;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid rgba(85, 218, 250, 0.42);
+  border-radius: 10px;
+  color: #c5cbe2;
+  background: rgba(17, 23, 45, 0.88);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
+}
+
+.skills-video-icon {
+  display: grid;
+  width: 3.25rem;
+  aspect-ratio: 1;
+  place-items: center;
+  padding-left: 0.2rem;
+  border: 1px solid rgba(255, 114, 208, 0.65);
+  border-radius: 50%;
+  color: var(--pink);
+}
+
+.skills-video-placeholder p {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.skills-scroll-link {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(85, 218, 250, 0.48);
+  border-radius: 50%;
+  color: var(--cyan);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.skills-scroll-link:hover,
+.skills-scroll-link:focus-visible {
+  transform: translateY(2px);
+  background: rgba(85, 218, 250, 0.12);
+}
+
+.skills-games-section {
+  display: flex;
+  min-height: 75svh;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 7vw, 5rem);
+  scroll-margin-top: 1rem;
+  border-top: 1px solid rgba(85, 218, 250, 0.22);
+  background: rgba(17, 23, 45, 0.72);
+  text-align: center;
+}
+
+.skills-games-section h2 {
+  margin-bottom: 1rem;
+}
+
+.skills-games-intro {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  align-self: center;
+  color: #c5cbe2;
+  font-size: 0.9rem;
+  text-align: center !important;
+}
+
+.skills-personal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  width: min(100%, 1050px);
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.skills-personal-card {
+  padding: 1.25rem;
+  border: 1px solid rgba(85, 218, 250, 0.22);
+  border-radius: 8px;
+  background: rgba(13, 19, 40, 0.78);
+  text-align: center;
+}
+
+.skills-personal-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--cyan);
+  font-size: 0.92rem;
+}
+
+.skills-personal-card p {
+  margin: 0;
+  color: #c5cbe2;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.skills-game-examples {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
+
+.skills-game-example {
+  overflow: hidden;
+  border: 1px solid rgba(85, 218, 250, 0.16);
+  border-radius: 6px;
+  background: rgba(8, 11, 22, 0.42);
+}
+
+.skills-game-example summary {
+  position: relative;
+  padding: 0.7rem 2rem 0.7rem 0.8rem;
+  color: var(--cyan);
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.skills-game-example summary::-webkit-details-marker {
+  display: none;
+}
+
+.skills-game-example summary::after {
+  position: absolute;
+  right: 0.8rem;
+  color: var(--pink);
+  content: "+";
+}
+
+.skills-game-example[open] summary::after {
+  content: "−";
+}
+
+.skills-game-example summary:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: -2px;
+}
+
+.skills-personal-card .skills-game-example p {
+  padding: 0 0.8rem 0.8rem;
+  color: #c5cbe2;
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+
+.skills-games-gallery,
+.skills-clips-section {
+  width: min(100%, 1050px);
+  margin: 2.5rem auto 0;
+}
+
+.skills-screenshot-grid,
+.skills-clips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1rem;
+}
+
+.skills-game-card,
+.skills-clip-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(85, 218, 250, 0.22);
+  border-radius: 8px;
+  background: rgba(13, 19, 40, 0.78);
+}
+
+.skills-game-screenshot-placeholder,
+.skills-game-clip-placeholder {
+  display: grid;
+  aspect-ratio: 16 / 9;
+  place-items: center;
+  padding: 1rem;
+  color: #aab2ce;
+  background: rgba(8, 11, 22, 0.72);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.skills-game-screenshot-placeholder {
+  border-bottom: 1px solid rgba(85, 218, 250, 0.16);
+}
+
+.skills-clips-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+}
+
+.skills-game-clip-placeholder {
+  aspect-ratio: 16 / 9;
+}

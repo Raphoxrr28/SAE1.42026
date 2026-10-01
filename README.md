@@ -4,16 +4,17 @@ Site personnel statique de Raphaël Heitz, réalisé en HTML, CSS et JavaScript.
 
 ## Pages
 
-- `index.html` : écran d'accueil et entrée vers le terminal.
-- `home.html` : accueil et présentation.
-- `projects.html` : projets.
-- `skills.html` : compétences.
-- `parcours.html` : parcours de formation.
-- `creativity.html` : références et journal de bord de la création du site.
-- `viginum.html` : présentation de VIGINUM.
-- `contact.html` : liens de contact.
+- `pages/index.html` : écran d'accueil et entrée vers le terminal.
+- `pages/home.html` : accueil et présentation.
+- `pages/projects.html` : projets.
+- `pages/skills.html` : emplacement pour une future vidéo horizontale, compétences personnelles, grandes cases de captures d’écran et clips de gameplay.
+- `pages/parcours.html` : parcours de formation.
+- `pages/creativity.html` : références et journal de bord de la création du site.
+- `pages/viginum.html` : présentation de VIGINUM.
+- `pages/contact.html` : liens de contact.
+- `pages/about.html` : redirection historique vers l’accueil.
 
-Chaque page possède son propre fichier HTML et réutilise la feuille de style et les scripts du dossier `js/`.
+Les pages principales sont regroupées dans `pages/`. Le fichier `index.html` à la racine redirige vers l’écran d’accueil afin que le site continue de s’ouvrir à son adresse habituelle. Les pages réutilisent les styles communs de `style.css`; les styles spécifiques sont répartis dans `css/` et importés par cette feuille, afin de rester disponibles lors des changements de page effectués sans rechargement par le terminal interactif.
 
 ## Utiliser le terminal
 
@@ -39,9 +40,19 @@ Les commandes précédentes et suivantes peuvent être retrouvées avec les flè
 ```text
 .
 ├── index.html
-├── home.html, projects.html, skills.html, parcours.html
-├── creativity.html, viginum.html, contact.html
-├── style.css
+├── pages/
+│   ├── index.html, home.html, projects.html, skills.html
+│   ├── parcours.html, creativity.html, viginum.html, contact.html, about.html
+├── images/              # Images du site et illustrations du journal créatif
+│   └── …
+├── style.css            # Styles communs et imports des styles de page
+├── css/
+│   ├── home.css
+│   ├── projects.css
+│   ├── skills.css
+│   ├── creativity.css
+│   ├── viginum.css
+│   └── contact.css
 ├── js/
 │   ├── app.js       # Initialisation, navigation et interactions du terminal
 │   ├── commands.js  # Interprétation des commandes
@@ -50,7 +61,6 @@ Les commandes précédentes et suivantes peuvent être retrouvées avec les flè
 │   └── system.js    # Horloge et informations du navigateur
 ├── archive/
 │   └── mi-projet/   # Ancienne version conservée à part
-└── images…
 ```
 
 Pour le détail de chaque fonction JavaScript, consultez [FONCTIONS-JAVASCRIPT.md](./FONCTIONS-JAVASCRIPT.md).

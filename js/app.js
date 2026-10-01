@@ -19,6 +19,7 @@ function showPage(name) {
   if (!window.SitePages.render(output, name)) return false;
   terminalSite.classList.toggle("contact-mode", name === "contact");
   terminalSite.classList.toggle("projects-mode", name === "projects");
+  terminalSite.classList.toggle("skills-mode", name === "skills");
   terminalSite.classList.toggle("creativity-mode", name === "creativity");
   terminalSite.classList.toggle("viginum-mode", name === "viginum");
 

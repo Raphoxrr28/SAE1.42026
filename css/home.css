@@ -1,0 +1,112 @@
+.welcome-screen {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(10, 14, 30, 0.22);
+}
+
+.welcome-card {
+  width: min(100%, 940px);
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(185, 138, 255, 0.28);
+  border-radius: 12px;
+  background: rgba(17, 23, 45, 0.78);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-kicker {
+  margin: 0 0 1.5rem;
+  color: var(--pink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.welcome-kicker span {
+  margin-right: 0.4rem;
+  color: var(--cyan);
+}
+
+.welcome-logo {
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 0 auto 1.5rem;
+  color: var(--violet);
+  font-family: monospace;
+  font-size: clamp(0.47rem, 0.95vw, 0.72rem);
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: left;
+  white-space: pre;
+}
+
+.welcome-copy {
+  max-width: 690px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcome-eyebrow {
+  margin: 0;
+  color: var(--cyan);
+  font-size: 0.75rem;
+}
+
+.welcome-copy h1 {
+  margin: 0.8rem 0;
+  color: var(--ink);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.welcome-copy > p:not(.welcome-eyebrow) {
+  margin: 0.6rem 0;
+  color: #c5cbe2;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.welcome-instructions code {
+  color: var(--pink);
+}
+
+.enter-button {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.2rem;
+  border: 1px solid rgba(72, 245, 140, 0.5);
+  border-radius: 6px;
+  color: #0b1521;
+  background: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+.enter-button span {
+  margin-right: 0.45rem;
+  color: #09643a;
+}
+
+.enter-button:hover,
+.enter-button:focus-visible {
+  transform: translateY(-2px);
+  background: #72ffa9;
+  box-shadow: 0 8px 24px rgba(72, 245, 140, 0.2);
+}
+
+.welcome-footer {
+  margin: 2rem 0 0;
+  color: #858da9;
+  font-size: 0.66rem;
+  text-align: center;
+}
+
+.welcome-footer span {
+  padding: 0 0.35rem;
+  color: var(--cyan);
+}
