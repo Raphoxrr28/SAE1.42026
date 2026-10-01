@@ -1,11 +1,7 @@
 window.SiteData = {
   pages: {
     home: [
-      "Terminal interactif",
-      "Bienvenue sur mon site. Tape « help » pour afficher les commandes disponibles."
-    ],
-    about: [
-      "À propos",
+      "Accueil",
       "Je m'appelle Raphaël, étudiant en BUT Réseaux & Télécommunications.",
       "Curieux de Linux, des réseaux et de la cybersécurité, j'aime apprendre en construisant."
     ],
@@ -42,5 +38,5 @@ window.SiteData = {
       action: null
     }
   ],
-  files: ["home.txt", "about.txt", "projects.txt", "skills.txt", "creativity.txt", "parcours.txt", "viginum.txt", "contact.txt"]
+  files: ["home.txt", "projects.txt", "skills.txt", "creativity.txt", "parcours.txt", "viginum.txt", "contact.txt"]
 };

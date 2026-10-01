@@ -265,22 +265,38 @@ function createCreativityPage() {
     {
       category: "ARTICLE · FREECODECAMP",
       title: "How to Create an Interactive Terminal Portfolio Website",
-      href: "https://www.freecodecamp.org/news/how-to-create-an-interactive-terminal-portfolio-website/#heading-what-is-jquery-terminal"
+      href: "https://www.freecodecamp.org/news/how-to-create-an-interactive-terminal-portfolio-website/#heading-what-is-jquery-terminal",
+      description: "Un tutoriel qui m’a aidé à découvrir comment créer un portfolio interactif inspiré d’un terminal."
     },
     {
       category: "PROJET · GITHUB",
       title: "Terminal Portfolio — Sat Naing",
-      href: "https://github.com/satnaing/terminal-portfolio"
+      href: "https://github.com/satnaing/terminal-portfolio",
+      description: "Un exemple de portfolio-terminal qui m’a inspiré pour l’apparence et la navigation de mon site."
     },
     {
       category: "ARTICLE · MEDIUM",
       title: "Linux Style Portfolio",
-      href: "https://medium.com/@edchokr/linux-style-portfolio-6c706507c603"
+      href: "https://medium.com/@edchokr/linux-style-portfolio-6c706507c603",
+      description: "Un article autour des portfolios au style Linux, proche de l’univers visuel que je voulais créer."
+    },
+    {
+      category: "COURS · MMI",
+      title: "Cours de mon professeur de MMI (2024)",
+      href: "http://courslehmann.free.fr/",
+      description: "Le site de cours de mon professeur de MMI, que j’avais consulté pendant mes cours en 2024."
+    },
+    {
+      category: "PROJET · GITHUB",
+      title: "Serpantinum",
+      href: "https://github.com/ilyamiro/serpantinum",
+      description: "Un projet GitHub que j’ai ajouté parmi les références qui ont nourri ma démarche créative."
     },
     {
       category: "REMERCIEMENTS · LINKEDIN",
       title: "Michaël Vlesik-Schmitt — BUT MMI",
-      href: "https://fr.linkedin.com/in/micha%C3%ABl-vlesik-schmitt?trk=public_post_feed-actor-image"
+      href: "https://fr.linkedin.com/in/micha%C3%ABl-vlesik-schmitt?trk=public_post_feed-actor-image",
+      description: "Le profil LinkedIn de Michaël Vlesik-Schmitt, ajouté dans mes références et remerciements."
     },
     {
       category: "VIDÉO · YOUTUBE",
@@ -294,16 +310,25 @@ function createCreativityPage() {
       href: "https://www.youtube.com/watch?v=TggHDm0_vBw",
       videoId: "TggHDm0_vBw"
     }
-  ].forEach(({ category, title: sourceTitle, href, videoId }) => {
+  ].forEach(({ category, title: sourceTitle, href, videoId, description }) => {
     const card = document.createElement(videoId ? "article" : "a");
     card.className = "creativity-source-card";
     if (card instanceof HTMLAnchorElement) {
+      card.classList.add("creativity-source-card--flip");
       card.href = href;
       card.target = "_blank";
       card.rel = "noopener noreferrer";
+      card.setAttribute(
+        "aria-label",
+        `${sourceTitle}. ${description} Ouvrir la ressource dans un nouvel onglet.`
+      );
     } else {
       card.classList.add("creativity-source-card--video");
     }
+
+    const front = document.createElement("div");
+    front.className = "creativity-source-front";
+    front.setAttribute("aria-hidden", "true");
 
     const sourceCategory = document.createElement("span");
     sourceCategory.className = "creativity-source-category";
@@ -312,8 +337,8 @@ function createCreativityPage() {
     const heading = document.createElement("h3");
     heading.textContent = sourceTitle;
 
-    card.append(sourceCategory, heading);
     if (videoId) {
+      card.append(sourceCategory, heading);
       const frame = document.createElement("iframe");
       frame.className = "creativity-video";
       frame.src = `https://www.youtube-nocookie.com/embed/${videoId}`;
@@ -325,10 +350,19 @@ function createCreativityPage() {
       frame.allowFullscreen = true;
       card.append(frame);
     } else {
+      front.append(sourceCategory, heading);
+      const back = document.createElement("div");
+      back.className = "creativity-source-back";
+      back.setAttribute("aria-hidden", "true");
+      back.textContent = description;
       const action = document.createElement("span");
       action.className = "creativity-source-action";
       action.textContent = "Consulter la ressource";
-      card.append(action);
+      back.append(action);
+      const inner = document.createElement("div");
+      inner.className = "creativity-source-card-inner";
+      inner.append(front, back);
+      card.append(inner);
     }
     (videoId ? videoList : sourceList).append(card);
   });
