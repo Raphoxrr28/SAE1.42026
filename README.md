@@ -5,7 +5,7 @@ Site personnel statique de Raphaël Heitz, réalisé en HTML, CSS et JavaScript.
 ## Pages
 
 - `index.html` : écran d'accueil et entrée vers le terminal.
-- `about.html` : présentation.
+- `home.html` : accueil et présentation.
 - `projects.html` : projets.
 - `skills.html` : compétences.
 - `parcours.html` : parcours de formation.
@@ -23,10 +23,10 @@ Depuis l'accueil, cliquez sur **Entrer dans le terminal**. Vous pouvez ensuite u
 | --- | --- |
 | `help` | Affiche les commandes et les pages disponibles. |
 | `ls` | Affiche les fichiers de pages simulés. |
-| `cd about` | Affiche une page (remplacez `about` par son nom). |
+| `cd home` | Affiche la page d’accueil (remplacez `home` par le nom d’une page). |
 | `cd` ou `cd ~` | Efface la sortie et affiche le message d'accueil du terminal. |
-| `about` | Affiche directement une page (même principe pour les autres pages). |
-| `cat about.txt` | Affiche le résumé textuel d'une page. |
+| `home` | Affiche directement la page d’accueil (même principe pour les autres pages). |
+| `cat home.txt` | Affiche le résumé textuel de la page d’accueil. |
 | `pwd`, `whoami`, `hostname`, `date` | Affiche une information simulée ou la date actuelle. |
 | `echo texte` | Réaffiche le texte fourni. |
 | `fetch` ou `neofetch` | Affiche un résumé système décoratif. |
@@ -39,7 +39,7 @@ Les commandes précédentes et suivantes peuvent être retrouvées avec les flè
 ```text
 .
 ├── index.html
-├── about.html, projects.html, skills.html, parcours.html
+├── home.html, projects.html, skills.html, parcours.html
 ├── creativity.html, viginum.html, contact.html
 ├── style.css
 ├── js/
