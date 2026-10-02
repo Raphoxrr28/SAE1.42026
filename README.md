@@ -11,6 +11,7 @@ Site personnel statique de Raphaël Heitz, réalisé en HTML, CSS et JavaScript.
 - `pages/creativity.html` : références et journal de bord de la création du site.
 - `pages/viginum.html` : présentation de VIGINUM.
 - `pages/contact.html` : liens de contact.
+- `pages/utilisation-ia.html` : transparence sur l’utilisation de l’intelligence artificielle.
 - `pages/about.html` : redirection historique vers l’accueil.
 
 Les pages principales sont regroupées dans `pages/`. Le fichier `index.html` à la racine redirige vers l’écran d’accueil afin que le site continue de s’ouvrir à son adresse habituelle. Les pages réutilisent les styles communs de `style.css`; les styles spécifiques sont répartis dans `css/` et importés par cette feuille, afin de rester disponibles lors des changements de page effectués sans rechargement par le terminal interactif.
@@ -41,7 +42,7 @@ Les commandes précédentes et suivantes peuvent être retrouvées avec les flè
 ├── index.html
 ├── pages/
 │   ├── index.html, home.html, projects.html, skills.html
-│   ├── creativity.html, viginum.html, contact.html, about.html
+│   ├── creativity.html, viginum.html, contact.html, utilisation-ia.html, about.html
 ├── images/              # Images du site et illustrations du journal créatif
 │   └── …
 ├── style.css            # Styles communs et imports des styles de page

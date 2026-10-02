@@ -1,0 +1,95 @@
+.ai-usage-shell .topbar {
+  grid-template-columns: 1fr auto;
+}
+
+.ai-usage-main {
+  display: grid;
+  place-items: center;
+}
+
+.ai-usage-article {
+  width: min(100%, 820px);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid rgba(185, 138, 255, 0.24);
+  border-radius: 9px;
+  background: rgba(17, 23, 45, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.ai-usage-kicker {
+  margin: 0 0 0.8rem;
+  color: var(--pink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.ai-usage-article h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.25;
+}
+
+.ai-usage-lead {
+  margin: 1rem 0 0;
+  color: #d9dcef;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.ai-usage-section {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(85, 218, 250, 0.2);
+}
+
+.ai-usage-section h2 {
+  margin: 0 0 0.6rem;
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+.ai-usage-section p,
+.ai-usage-note {
+  margin: 0;
+  color: #c5cbe2;
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+.ai-usage-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-usage-tools li {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(85, 218, 250, 0.24);
+  border-radius: 999px;
+  color: #c5cbe2;
+  background: rgba(13, 19, 40, 0.64);
+  font-size: 0.78rem;
+}
+
+.ai-usage-note {
+  margin-top: 1.8rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--pink);
+  color: #f3b5dc;
+}
+
+@media (max-width: 700px) {
+  .ai-usage-shell .topbar {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-usage-shell .navigation {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}

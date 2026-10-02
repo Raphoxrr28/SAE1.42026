@@ -5,6 +5,7 @@
 @import url("css/viginum.css");
 @import url("css/creativity.css");
 @import url("css/skills.css");
+@import url("css/ai-usage.css");
 
 :root {
   color-scheme: dark;
@@ -235,6 +236,17 @@ body::after {
   backdrop-filter: blur(12px);
   color: #e5e5f5;
   font-size: 0.66rem;
+}
+
+.footer-link {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--pink);
+  text-decoration: underline;
 }
 
 @media (prefers-reduced-motion: reduce) {
