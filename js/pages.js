@@ -428,7 +428,7 @@ function createCreativityPage() {
       number: "03",
       title: "Mi-projet",
       detail:
-        "La plupart des fonctionnalités du site étaient déjà en place, mais aucune page n’était encore réalisée.",
+        "La plupart des fonctionnalités du site étaient déjà en place, mais aucune page n’était encore réalisée. Le principal problème de cette page était que son fond d’écran n’était pas libre de droits.",
       images: [
         {
           src: "../images/image.png",
