@@ -3,7 +3,7 @@ window.SiteData = {
     home: [
       "Accueil",
       "Je m'appelle Raphaël, étudiant en BUT Réseaux & Télécommunications.",
-      "Curieux de Linux, des réseaux et de la cybersécurité, j'aime apprendre en construisant."
+      "J'adore l'administration système et, plus largement, je suis passionné par la photo et la vidéo."
     ],
     projects: ["Mes projets"],
     skills: ["Compétences personnelles"],
