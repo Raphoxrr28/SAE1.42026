@@ -109,7 +109,8 @@
 }
 
 .creativity-journal-image--blurred {
-  filter: blur(5px);
+  filter: blur(28px);
+  transform: scale(1.15);
 }
 
 .creativity-journal-figure figcaption {
