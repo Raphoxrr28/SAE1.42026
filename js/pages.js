@@ -429,6 +429,7 @@ function createCreativityPage() {
       title: "Mi-projet",
       detail:
         "La plupart des fonctionnalités du site étaient déjà en place, mais aucune page n’était encore réalisée. Le principal problème de cette page était que son fond d’écran n’était pas libre de droits.",
+      licenseHref: "../license-saison-d'automne-et-montagne-fuji-au-lac-kawaguchiko,-japon.-10695656.pdf",
       images: [
         {
           src: "../images/image.png",
@@ -438,7 +439,7 @@ function createCreativityPage() {
         }
       ]
     }
-  ].forEach(({ number, title: entryTitle, detail, note, images }) => {
+  ].forEach(({ number, title: entryTitle, detail, note, licenseHref, images }) => {
     const entry = document.createElement("article");
     entry.className = "creativity-journal-entry";
 
@@ -478,6 +479,17 @@ function createCreativityPage() {
     });
 
     content.append(heading, description);
+    if (licenseHref) {
+      const licenseNote = document.createElement("p");
+      licenseNote.textContent = "L’image de fond utilisée sur le site actuel est libre de droits. ";
+      const licenseLink = document.createElement("a");
+      licenseLink.href = licenseHref;
+      licenseLink.textContent = "Consulter sa licence (PDF)";
+      licenseLink.target = "_blank";
+      licenseLink.rel = "noopener noreferrer";
+      licenseNote.append(licenseLink);
+      content.append(licenseNote);
+    }
     if (note) content.append(noteParagraph);
     content.append(imageList);
     entry.append(entryNumber, content);
