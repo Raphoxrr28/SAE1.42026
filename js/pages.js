@@ -433,7 +433,8 @@ function createCreativityPage() {
         {
           src: "../images/image.png",
           alt: "Capture d’écran de l’étape intermédiaire du site, intitulée mi-projet",
-          caption: "Mi-projet"
+          caption: "Mi-projet",
+          blurred: true
         }
       ]
     }
@@ -460,11 +461,12 @@ function createCreativityPage() {
 
     const imageList = document.createElement("div");
     imageList.className = "creativity-journal-images";
-    images.forEach(({ src, alt, caption }) => {
+    images.forEach(({ src, alt, caption, blurred }) => {
       const figure = document.createElement("figure");
       figure.className = "creativity-journal-figure";
 
       const imageElement = document.createElement("img");
+      if (blurred) imageElement.classList.add("creativity-journal-image--blurred");
       imageElement.src = src;
       imageElement.alt = alt;
       imageElement.loading = "lazy";

@@ -108,6 +108,10 @@
   object-position: top center;
 }
 
+.creativity-journal-image--blurred {
+  filter: blur(5px);
+}
+
 .creativity-journal-figure figcaption {
   padding: 0.65rem 0.8rem;
   border-top: 1px solid rgba(85, 218, 250, 0.16);
